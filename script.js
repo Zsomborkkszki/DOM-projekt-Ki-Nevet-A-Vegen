@@ -15,3 +15,19 @@ const startBtn = document.getElementById('startBtn');
 function randomColor() {
     return COLORS[Math.floor(Math.random() * COLORS.length)];
 }
+
+function tick() {
+    // ~1 in 8 esély a zöldre, egyébként véletlen szín
+    const goGreen = Math.random() < 0.125;
+    if (goGreen) {
+        box.style.backgroundColor = GREEN;
+        if (!isGreen) {
+            isGreen = true;
+            greenAt = Date.now();
+        }
+    } else {
+        box.style.backgroundColor = randomColor();
+        isGreen = false;
+        greenAt = null;
+    }
+}
