@@ -15,10 +15,23 @@
         <div class="game-container">
             <div class="player" id="player1">
                 <h2>Játékos 1</h2>
-                <div class="box">
-                </div>
+                <div class="box" id="gameBox"></div>
                 <p id="score1">Pontszám: 0</p>
+                <p id="reactionTime"></p>
+                <button id="startBtn" onclick="startGame()">Indítás</button>
             </div>
+        </div>
+
+        <div class="toplista">
+            <h2>Toplista</h2>
+            <table>
+                <thead>
+                    <tr><th>#</th><th>Idő (ms)</th></tr>
+                </thead>
+                <tbody id="toplistBody">
+                    <tr><td colspan="2">Még nincs eredmény</td></tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </body>
