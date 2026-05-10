@@ -31,3 +31,13 @@ function tick() {
         greenAt = null;
     }
 }
+function startGame() {
+    if (running) return;
+    running = true;
+    isGreen = false;
+    greenAt = null;
+    timeEl.textContent = '';
+    startBtn.textContent = 'Fut…';
+    startBtn.disabled = true;
+    interval = setInterval(tick, 200);
+}
