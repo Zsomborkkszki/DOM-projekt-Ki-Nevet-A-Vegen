@@ -39,7 +39,7 @@ function startGame() {
     timeEl.textContent = '';
     startBtn.textContent = 'Fut…';
     startBtn.disabled = true;
-    interval = setInterval(tick, 200);
+    interval = setInterval(tick, 1000);
 }
 box.addEventListener('click', () => {
     if (!running) return;
@@ -56,3 +56,12 @@ box.addEventListener('click', () => {
         stop();
     }
 });
+
+function stop() {
+    clearInterval(interval);
+    running = false;
+    isGreen = false;
+    box.style.backgroundColor = '#3498db';
+    startBtn.textContent = 'Újra';
+    startBtn.disabled = false;
+}
