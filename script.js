@@ -41,3 +41,18 @@ function startGame() {
     startBtn.disabled = true;
     interval = setInterval(tick, 200);
 }
+box.addEventListener('click', () => {
+    if (!running) return;
+
+    if (isGreen) {
+        const ms = Date.now() - greenAt;
+        score++;
+        scoreEl.textContent = 'Pontszám: ' + score;
+        timeEl.textContent  = 'Reakcióidő: ' + ms + ' ms';
+        saveScore(ms);
+        stop();
+    } else {
+        timeEl.textContent = 'Nem zöld volt!';
+        stop();
+    }
+});
