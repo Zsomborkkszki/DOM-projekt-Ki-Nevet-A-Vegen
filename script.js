@@ -65,3 +65,8 @@ function stop() {
     startBtn.textContent = 'Újra';
     startBtn.disabled = false;
 }
+
+function getScores() {
+    try { return JSON.parse(localStorage.getItem('kinevet') || '[]'); }
+    catch { return []; }
+}
